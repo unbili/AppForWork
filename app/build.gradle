@@ -1,20 +1,22 @@
+import com.example.versionplugin.AndroidBuildVersion as ABV
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'com.example.versionplugin'
 }
 
 android {
-    namespace 'com.example.appforwork'
-    compileSdk 32
+    namespace ABV.nameSpace
+    compileSdk ABV.compileSdk
 
     defaultConfig {
-        applicationId "com.example.appforwork"
-        minSdk 24
-        targetSdk 32
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        applicationId ABV.applicationId
+        minSdk ABV.minSdk
+        targetSdk ABV.targetSdk
+        versionCode ABV.versionCode
+        versionName ABV.versionName
+        testInstrumentationRunner ABV.testInstrumentationRunner
     }
 
     buildTypes {
