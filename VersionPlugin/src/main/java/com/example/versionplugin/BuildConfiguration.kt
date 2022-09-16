@@ -18,7 +18,6 @@ object AndroidBuildVersion {
  * 项目相关配置
  */
 object Dependencies {
-
     //AndroidX
     const val appcompat = "androidx.appcompat:appcompat:1.2.0"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.4"
@@ -50,14 +49,31 @@ object Dependencies {
     //Kotlin
     const val kotlinx_coroutines_core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7"
 
-    const val filter = "filter"
-    const val filterOr=  "filterOr"
-
-
-    val dependenciesList  = this::class.java.declaredFields.toMutableList().filter {
-        //如果不想添加此依赖，可以在过滤里面添加
-        it.name.equals(filter) or it.equals(filterOr)
-    }
+    //dependenciesList
+    @JvmStatic
+    val dependenciesList: List<String> = listOf(
+        appcompat,
+        constraintLayout,
+        coreKtx,
+        material,
+        junittest,
+        recyclerview,
+        cardview,
+        junit,
+        espresso_core,
+        guava,
+        commons,
+        zxing,
+        leakcanary,
+        room_runtime,
+        room_compiler,
+        room_rxjava2,
+        lifecycle_extensions,
+        lifecycle_compiler,
+        rxlifecycle,
+        rxlifecycle_components,
+        kotlinx_coroutines_core
+    )
 
 
 }
